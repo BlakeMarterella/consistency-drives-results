@@ -1,8 +1,15 @@
-<div class="bg-gradient-to-b from-navy-blue to-main-blue min-w-full min-h-screen flex justify-center items-center">
-    <div class="bg-white text-black w-full md:w-10/12 lg:w-3/4 lg:max-w-2xl p-4 m-4 md:m-0 rounded-xl z-10">
-        <div class="flex justify-center items-center mb-4">
-            <img src="assets/logo.svg" class="w-64 h-16" alt="Consistency Logo">
+<div class="bg-gradient-to-b from-navy-blue to-main-blue min-w-full min-h-screen flex flex-col justify-center items-center">
+    <div class="bg-white text-black w-3/4 md:w-10/12 lg:w-3/4 lg:max-w-2xl py-8 px-12 m-4 md:m-0 rounded-xl z-10">
+        <div class="flex-col justify-center items-center mb-4 space-y-4">
+            <div class="flex justify-center items-center">
+                <img src="assets/logo.svg" class="w-16 h-16" alt="Consistency Logo">
+            </div>
+            <!-- <h1 class="text-navy-blue text-2xl text-center">Consistency</h1> -->
+            <div class="bg-navy-blue h-1 rounded-lg mx-4"></div>
         </div>
         <router-outlet></router-outlet>
     </div>
+    <button [routerLink]="['/']" class="border-white border-2 text-white p-2 px-6 rounded-md">
+        Home
+    </button>
 </div>

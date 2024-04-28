@@ -13,10 +13,10 @@
             </p>
         </div>
         <div class="flex justify-center items-center">
-            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-main-blue transition duration-150 ease-in-out hover:bg-navy-blue lg:text-xl lg:font-bold  rounded text-white px-4 sm:px-10 border border-navy-blue py-2 sm:py-4 text-sm">
+            <button [routerLink]="['/', 'auth', 'sign-in']" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-navy-blue transition duration-150 ease-in-out hover:bg-navy-blue lg:text-xl lg:font-bold  rounded text-white px-4 sm:px-10 border border-navy-blue py-2 sm:py-4 text-sm">
                 Sign In
             </button>
-            <button class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:text-xl lg:font-bold  hover:text-navy-blue rounded border border-navy-blue text-navy-blue px-4 sm:px-10 py-2 sm:py-4 text-sm">
+            <button [routerLink]="['/', 'auth', 'register']" class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:text-xl lg:font-bold  hover:text-navy-blue rounded border border-navy-blue text-navy-blue px-4 sm:px-10 py-2 sm:py-4 text-sm">
                 Get Started
             </button>
         </div>

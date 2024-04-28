@@ -1,1 +1,52 @@
-<p>sign-in works!</p>
+<div *ngIf="!isLoading">
+    <h1 class="text-center mb-2">Sign In</h1>
+    <form [formGroup]="signInForm" (ngSubmit)="clickSignIn()" (keydown.enter)="clickEnterKey($event)">
+        <div class="mb-4">
+            <h4 class="text-gray-600 mb-1">Email</h4>
+            <input
+                class="w-full  px-4 py-3 bg-secondary-accent-blue focus:bg-gray-100 border-2 rounded-lg focus:outline-none focus:border-navy-blue transition ease-in duration-200"
+                type="text" placeholder="john@doe.com" name="email" formControlName="email" id="email"
+                [ngClass]="(this.signInForm.controls.email.errors && this.signInForm.controls.email.touched) ? 'border-orange-500' : 'border-gray-300'">
+        </div>
+    
+        <div class="relative">
+            <h4 class="text-gray-600 mb-1">Password</h4>
+            <input placeholder="Password" [type]="this.showPassword ? 'text' : 'password'"
+                name="password" formControlName="password" id="password"
+                class="w-full px-4 py-3 rounded-lg bg-secondary-accent-blue focus:bg-gray-100 border-2 focus:outline-none focus:border-navy-blue transition ease-in duration-200"
+                [ngClass]="(this.signInForm.controls.password.errors && this.signInForm.controls.password.touched) ? 'border-orange-500' : 'border-gray-300'">
+    
+            <div
+                class="cursor-pointer absolute top-0 right-3 grid h-8 w-8 translate-y-full place-items-center text-gray-600">
+                <fa-icon [icon]="this.showPassword ? this.hidePasswordIcon : this.showPasswordIcon"
+                    (click)="toggleShowPassword()" class="text-xl"></fa-icon>
+            </div>
+            <div class="text-sm ml-auto mt-1">
+                <a (click)="clickForgotPassword()"
+                    class="text-rfk-slate hover:text-rfk-slate-700 transition ease-in duration-300 hover:cursor-pointer">
+                    Forgot password?
+                </a>
+            </div>
+        </div>
+    </form>
+
+    <div *ngIf="errorMessage !== ''" class="mt-6 mb-6">
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">🚨 </strong>
+            <span class="block sm:inline">{{ errorMessage }}</span>
+        </div>
+    </div>
+    
+    <div class="flex justify-between items-center mt-4">
+        <button [routerLink]="['/', 'auth', 'register']" class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:text-xl lg:font-bold  hover:text-navy-blue rounded border border-navy-blue text-navy-blue px-4 sm:px-10 py-2 sm:py-4 text-sm">
+            Register
+        </button>
+        <button (click)="clickSignIn()" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-navy-blue transition duration-150 ease-in-out hover:bg-navy-blue lg:text-xl lg:font-bold  rounded text-white px-4 sm:px-10 border border-navy-blue py-2 sm:py-4 text-sm disabled:bg-opacity-70" [attr.disabled]="(this.signInForm.invalid) ? true : null">
+            Sign In
+        </button>
+    </div>
+</div>
+
+<div *ngIf="isLoading" class="flex justify-center items-center h-full">
+    <shared-loading-icon></shared-loading-icon>
+</div>

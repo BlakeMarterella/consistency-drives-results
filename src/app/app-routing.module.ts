@@ -8,8 +8,8 @@ import {
 } from "@angular/router";
 import { PageNotFoundComponent } from "@core/components";
 import { HomeLayoutComponent, AuthLayoutComponent } from "@core/layouts";
+
 import { environment } from "@environments/environment";
-// import { DefaultLayout, AuthLayout } from "@core/layouts";
 
 const routes: Routes = [
   {
@@ -20,24 +20,22 @@ const routes: Routes = [
         (m) => m.HomeModule
       ),
   },
-//   {
-//     path: environment.routes.policiesView.baseURL,
-//     component: DefaultLayout,
-//     loadChildren: () =>
-//       import("./views/policies-view/policies-view.module").then((m) => m.PoliciesViewModule),
-//   },
-//   {
-//     path: environment.routes.supportView.baseURL,
-//     component: DefaultLayout,
-//     loadChildren: () =>
-//       import("./views/support-view/support-view.module").then((m) => m.SupportViewModule),
-//   },
-  // {
-  //   path: environment.routes.authView.baseURL,
-  //   component: AuthLayout,
-  //   loadChildren: () =>
-  //     import("./views/auth-view/auth-view.module").then((m) => m.AuthViewModule),
-  // },
+  {
+    path: "auth",
+    component: AuthLayoutComponent,
+    loadChildren: () =>
+      import("./modules/auth/auth.module").then(
+        (m) => m.HomeModule
+      ),
+  },
+  {
+    path: "dashboard",
+    component: HomeLayoutComponent,
+    loadChildren: () =>
+      import("./modules/dashboard/dashboard.module").then(
+        (m) => m.DashboardModule
+      ),
+  },
   { path: "", pathMatch: "full", redirectTo: "/" },
   { path: "**", title: "404", component: PageNotFoundComponent },
 ];
