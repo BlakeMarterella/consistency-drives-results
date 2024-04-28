@@ -10,7 +10,7 @@ A proof-of-concept web application that allows users to track their daily habits
 | Dependancy Name | Version |
 | -------- | -------- |
 | NPM    | `v10.5.1`     |
-| Angular CLI    |  `v17.3.6`    |
+| Angular CLI    |  `v16.0.0`    |
 
 
 ## Getting Started

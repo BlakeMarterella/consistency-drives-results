@@ -6,8 +6,6 @@
     "paths": {
       "@core/*": ["app/core/*"],
       "@shared/*": ["app/shared/*"],
-      "@layouts/*": ["app/layouts/*"],
-      "@modules/*": ["app/modules/*"],
       "@data/*": ["app/data/*"],
       "@features/*": ["app/features/*"],
       "@assets/*": ["assets/*"],

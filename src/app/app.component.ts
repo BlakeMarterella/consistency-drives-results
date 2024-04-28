@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: '<router-outlet></router-outlet>',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'consistency-drives-results';
+  constructor(analytics: AngularFireAnalytics) {
+    analytics.logEvent('app_open', {"component": "AppComponent"});
+  }
 }
