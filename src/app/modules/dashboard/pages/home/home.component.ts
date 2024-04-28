@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '@shared/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +7,8 @@ import { AuthService } from '@shared/services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
-    if (!this.authService.isLoggedIn) {
-      this.router.navigate(["/", "auth", "sign-in"])
-    }
-  }
-
-  clickLogout() {
-    this.authService.SignOut();
   }
 }

@@ -154,7 +154,7 @@ export class AuthService {
     });
   }
 
-  getCustomerDataFromLocalStorage(): UserLocalStore {
+  getUserDataFromLocalStorage(): UserLocalStore {
     return JSON.parse(localStorage.getItem('user')!);
   }
 
@@ -163,7 +163,7 @@ export class AuthService {
    *
    * This includes the user's street address
    */
-  getFullCustomerData(): Promise<User> {
+  getFullUserData(): Promise<User> {
     return new Promise((resolve, reject) => {
       // Check that the user is logged in
       this.afAuth.authState.subscribe((fbUser: firebase.User) => {

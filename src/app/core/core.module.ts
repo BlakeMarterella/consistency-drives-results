@@ -26,13 +26,12 @@ import { AuthLayoutComponent, HomeLayoutComponent } from "./layouts";
 // Components
 import { HomeNavbarComponent, PageNotFoundComponent } from './components';
 
-
 @NgModule({
   declarations: [
     AuthLayoutComponent,
     HomeLayoutComponent,
     HomeNavbarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,

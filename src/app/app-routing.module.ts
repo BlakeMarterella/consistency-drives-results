@@ -8,6 +8,7 @@ import {
 } from "@angular/router";
 import { PageNotFoundComponent } from "@core/components";
 import { HomeLayoutComponent, AuthLayoutComponent } from "@core/layouts";
+import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 
 import { environment } from "@environments/environment";
 
@@ -30,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
-    component: HomeLayoutComponent,
+    component: DashboardComponent,
     loadChildren: () =>
       import("./modules/dashboard/dashboard.module").then(
         (m) => m.DashboardModule
