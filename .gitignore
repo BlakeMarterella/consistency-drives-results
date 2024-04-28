@@ -43,3 +43,4 @@ Thumbs.db
 
 **/environment.ts
 .env
+firebase_service_account_key.json
