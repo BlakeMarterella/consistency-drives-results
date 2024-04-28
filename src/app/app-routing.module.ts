@@ -7,13 +7,14 @@ import {
   RouterStateSnapshot,
 } from "@angular/router";
 import { PageNotFoundComponent } from "@core/components";
+import { HomeLayoutComponent, AuthLayoutComponent } from "@core/layouts";
 import { environment } from "@environments/environment";
 // import { DefaultLayout, AuthLayout } from "@core/layouts";
 
 const routes: Routes = [
   {
     path: "",
-    // component: DefaultLayout,
+    component: HomeLayoutComponent,
     loadChildren: () =>
       import("./modules/home/home.module").then(
         (m) => m.HomeModule

@@ -21,10 +21,20 @@ import {
   UserTrackingService,
 } from "@angular/fire/compat/analytics";
 
+// Layouts
+import { AuthLayoutComponent, HomeLayoutComponent } from "./layouts";
+
+// Components
+import { HomeNavbarComponent, PageNotFoundComponent } from './components';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AuthLayoutComponent,
+    HomeLayoutComponent,
+    HomeNavbarComponent,
+    PageNotFoundComponent
+  ],
   imports: [
     CommonModule,
     BrowserModule,
@@ -38,7 +48,10 @@ import {
     RouterModule,
   ],
   exports: [
-    AngularFireAnalyticsModule
+    AngularFireAnalyticsModule,
+    HomeNavbarComponent,
+    HomeLayoutComponent,
+    AuthLayoutComponent
   ],
   providers: [
     ScreenTrackingService, 
