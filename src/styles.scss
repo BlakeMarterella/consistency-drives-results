@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+      @apply font-semibold lg:text-5xl md:text-4xl text-3xl;
+    }
+  
+    h2 {
+      @apply font-semibold lg:text-4xl md:text-3xl text-2xl mb-2 #{!important};
+    }
+  
+    h3 {
+      @apply text-xl;
+    }
+  
+    h4 {
+    }
+  
+    // p {
+    //   @apply my-4 md:text-lg text-base leading-relaxed text-justify;
+    // }
+  
+  
+  }
+  
+  @layer utilities {
+    .wrapper {
+      @apply py-10 md:py-16 px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-40 relative;
+    }
+  
+    /**
+      Establish the maximum width of particular elements.
+  
+      This is traditionally used under wrapper
+    */
+    .container {
+      @apply max-w-full lg:max-w-[1400px] mx-auto;
+    }
+  
+    .component-container {
+      @apply mx-auto px-4 md:px-8 my-4 md:my-0;
+    }
+  
+    .center-x-y {
+      @apply flex items-center justify-center;
+    }
+  
+    .strong {
+      @apply font-bold text-gray-800;
+    }
+  
+    .big-text {
+      @apply lg:text-2xl md:text-xl sm:text-lg text-lg
+    }
+}
