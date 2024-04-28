@@ -1,27 +1,24 @@
-# ConsistencyDrivesResults
+# Consistency Drives Results
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+Author: Blake Marterella
+Created: 2024-04-28
 
-## Development server
+A proof-of-concept web application that allows users to track their daily habits in order to build a consistent routine that drives results. This project was made as the first installment of my 1-day POC challenge.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Project Overview
 
-## Code scaffolding
+| Dependancy Name | Version |
+| -------- | -------- |
+| NPM    | `v10.5.1`     |
+| Angular CLI    |  `v17.3.6`    |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Configure Firebase
 
-## Running unit tests
+If you wish to deploy the project to your own Firebase project, you will need to create a new Firebase project, enable authentication, firestore, and hosting and then follow the instructions below:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Update `.env` file
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Using the provided `example.env` file, create a new `.env` file in the root of the project and update the values with your Firebase project details. The script located in `src/scripts/setEnv.ts` will automatically update the environment.ts file with the values from the `.env` file.
