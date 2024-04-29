@@ -4,10 +4,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthService } from './services/auth.service';
 import { LoadingIconComponent } from './components/loading-icon/loading-icon.component';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalService } from './services/modal.service';
 
 @NgModule({
   declarations: [
-    LoadingIconComponent
+    LoadingIconComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
@@ -17,10 +20,12 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
   exports: [
     FontAwesomeModule,
     CommonModule,
-    LoadingIconComponent
+    LoadingIconComponent,
+    ModalComponent
   ],
   providers: [
-    AuthService
+    AuthService,
+    ModalService
   ]
 })
 export class SharedModule { }

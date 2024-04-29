@@ -1,0 +1,8 @@
+<div class="grid grid-flow-col grid-rows-7 gap-1 bg-gray-100 w-fit">
+    <div *ngFor="let date of getDates()"
+         class="w-4 h-4 cursor-pointer border-2 border-black"
+         [ngClass]="habits[date] ? habits[date].color : 'bg-gray-200'"
+         [attr.title]="habits[date] ? habits[date].name + ' on ' + date : 'No activity on ' + date">
+    </div>
+  </div>
+  

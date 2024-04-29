@@ -1,1 +1,26 @@
-<p>home works!</p>
+<!-- <h1>Welcome!</h1> -->
+<div class="flex justify-between">
+    <!-- <button (click)="modalService.open('create-new-entry-modal')" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:font-bold  hover:text-navy-blue rounded border p-4 border-navy-blue text-navy-blue text-sm">
+        New Entry
+    </button>
+    <button (click)="modalService.open('create-new-habit-modal')" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-navy-blue transition duration-150 ease-in-out hover:bg-navy-blue lg:font-bold rounded text-white border border-navy-blue text-sm p-4 disabled:bg-opacity-70">
+        New Habit
+    </button> -->
+</div>
+
+
+<div class="mt-4">
+    <consistency-grid></consistency-grid>
+</div>
+
+<!-- <jw-modal id="create-new-entry-modal">
+    <h1>A custom modal popup</h1>
+    <p>Home page text: <input type="text" [(ngModel)]="text" /></p>
+    <button (click)="modalService.close();">Close</button>
+</jw-modal> -->
+
+<jw-modal id="create-new-entry-habit-10101">
+    <h1>A tall modal popup</h1>
+    <p style="padding-bottom: 1500px;">Close with the button below or by clicking the background.</p>
+    <button (click)="modalService.close();">Close</button>
+</jw-modal>

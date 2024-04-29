@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from '@shared/services/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  text = "Home Component";
 
-  constructor() {}
+  constructor(protected modalService: ModalService) {}
 
   ngOnInit(): void {
   }
