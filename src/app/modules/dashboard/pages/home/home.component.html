@@ -1,11 +1,11 @@
 <!-- <h1>Welcome!</h1> -->
 <div class="flex justify-between">
-    <!-- <button (click)="modalService.open('create-new-entry-modal')" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:font-bold  hover:text-navy-blue rounded border p-4 border-navy-blue text-navy-blue text-sm">
+    <button (click)="modalService.open('create-new-entry-modal')" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:font-bold  hover:text-navy-blue rounded border p-4 border-navy-blue text-navy-blue text-sm">
         New Entry
     </button>
     <button (click)="modalService.open('create-new-habit-modal')" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-navy-blue transition duration-150 ease-in-out hover:bg-navy-blue lg:font-bold rounded text-white border border-navy-blue text-sm p-4 disabled:bg-opacity-70">
         New Habit
-    </button> -->
+    </button>
 </div>
 
 
@@ -13,14 +13,32 @@
     <consistency-grid></consistency-grid>
 </div>
 
-<!-- <jw-modal id="create-new-entry-modal">
-    <h1>A custom modal popup</h1>
-    <p>Home page text: <input type="text" [(ngModel)]="text" /></p>
+<jw-modal id="create-new-entry-modal">
+    <h1 class="text-center">New Entry</h1>
+    <div class="h-1 bg-navy-blue rounded-xl"></div>
+    <p>Home page text: <input type="text" [(ngModel)]="newEntryDate" /></p>
     <button (click)="modalService.close();">Close</button>
-</jw-modal> -->
+</jw-modal>
 
-<jw-modal id="create-new-entry-habit-10101">
-    <h1>A tall modal popup</h1>
-    <p style="padding-bottom: 1500px;">Close with the button below or by clicking the background.</p>
-    <button (click)="modalService.close();">Close</button>
+<jw-modal id="create-new-habit-modal">
+    <h1 class="text-center">New Habit</h1>
+    <div class="h-1 bg-navy-blue rounded-xl my-4"></div>
+    
+    <div class="flex mb-4">
+        <p class="mr-2">Name:</p>
+        <input type="text" class="outline outline-navy-blue rounded-md" [(ngModel)]="newHabitName" />
+    </div>
+    <div class="flex justify-between">
+        <p class="mr-2">Color:</p>
+        <input class="outline outline-navy-blue rounded-md" [(colorPicker)]="color" [style.background]="color"/>
+    </div>
+
+    <div class="flex justify-between mt-8">
+        <button (click)="modalService.close();" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:font-bold  hover:text-navy-blue rounded border p-4 border-navy-blue text-navy-blue text-sm">
+            Close
+        </button>
+        <button (click)="submitNewHabit(); modalService.close();" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-navy-blue transition duration-150 ease-in-out hover:bg-navy-blue lg:font-bold rounded text-white border border-navy-blue text-sm p-4 disabled:bg-opacity-70">
+            Save
+        </button>
+    </div>
 </jw-modal>

@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { SidebarItemComponent } from './components/sidebar-item/sidebar-item.component';
 import { ConsistencyGridComponent } from './components/consistency-grid/consistency-grid.component';
 import { FormsModule } from '@angular/forms';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     DashboardRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ColorPickerModule
   ]
 })
 export class DashboardModule { }

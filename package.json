@@ -27,6 +27,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "dotenv": "^16.4.5",
+    "ngx-color-picker": "^16.0.0",
     "rxjs": "~7.8.0",
     "tailwindcss-animated": "^1.0.1",
     "ts-node": "^10.9.2",
