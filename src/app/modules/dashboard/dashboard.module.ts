@@ -7,6 +7,8 @@ import { SidebarItemComponent } from './components/sidebar-item/sidebar-item.com
 import { ConsistencyGridComponent } from './components/consistency-grid/consistency-grid.component';
 import { FormsModule } from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { NewHabitPopupComponent } from './popups/new-habit-popup/new-habit-popup.component';
+import { NewEntryPopupComponent } from './popups/new-entry-popup/new-entry-popup.component';
 
 
 
@@ -15,7 +17,9 @@ import { ColorPickerModule } from 'ngx-color-picker';
     HomeComponent,
     DashboardComponent,
     SidebarItemComponent,
-    ConsistencyGridComponent
+    ConsistencyGridComponent,
+    NewHabitPopupComponent,
+    NewEntryPopupComponent
   ],
   imports: [
     DashboardRoutingModule,

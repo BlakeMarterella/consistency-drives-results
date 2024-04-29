@@ -1,8 +1,20 @@
-<div class="grid grid-flow-col grid-rows-7 gap-1 bg-gray-100 w-fit">
+<!-- <div class="grid grid-flow-col grid-rows-7 gap-1 bg-gray-100 w-fit">
     <div *ngFor="let date of getDates()"
          class="w-4 h-4 cursor-pointer border-2 border-black"
          [ngClass]="habits[date] ? habits[date].color : 'bg-gray-200'"
          [attr.title]="habits[date] ? habits[date].name + ' on ' + date : 'No activity on ' + date">
     </div>
-  </div>
-  
+  </div> -->
+
+<div class="grid grid-flow-col grid-rows-7 gap-1 bg-gray-100 w-fit">
+     <ng-container *ngFor="let date of getDates(); let i = index">
+          <div *ngIf="dates[date].isNewMonth" class="row-span-full text-center font-bold">
+               {{ dates[date].monthName }}
+          </div>
+          <div class="w-4 h-4 cursor-pointer border-2 border-black"
+               [ngClass]="dates[date].habit ? dates[date].habit.color : 'bg-gray-200'"
+               [style.background-color]="dates[date].habits ? dates[date].habits[0].color : 'bg-gray-200'"
+               [attr.title]="dates[date].habit ? dates[date].habit.name + ' on ' + date : 'No activity on ' + date">
+          </div>
+     </ng-container>
+</div>

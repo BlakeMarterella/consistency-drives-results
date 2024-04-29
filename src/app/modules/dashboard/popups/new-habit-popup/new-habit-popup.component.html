@@ -1,0 +1,22 @@
+<jw-modal id="create-new-habit-modal">
+    <h1 class="text-center">New Habit</h1>
+    <div class="h-1 bg-navy-blue rounded-xl my-4"></div>
+    
+    <div class="flex mb-4">
+        <p class="mr-2">Name:</p>
+        <input type="text" class="border-navy-blue border-2 rounded-md" [(ngModel)]="newHabitName" />
+    </div>
+    <div class="flex justify-between">
+        <p class="mr-2">Color:</p>
+        <input class="border-navy-blue border-2 rounded-md" [(colorPicker)]="color" [style.background]="color"/>
+    </div>
+
+    <div class="flex justify-between mt-8">
+        <button (click)="modalService.close();" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:font-bold  hover:text-navy-blue rounded border p-4 border-navy-blue text-navy-blue text-sm">
+            Close
+        </button>
+        <button (click)="submitNewHabit(); modalService.close();" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-navy-blue transition duration-150 ease-in-out hover:bg-navy-blue lg:font-bold rounded text-white border border-navy-blue text-sm p-4 disabled:bg-opacity-70">
+            Save
+        </button>
+    </div>
+</jw-modal>

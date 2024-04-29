@@ -1,0 +1,23 @@
+<jw-modal [id]="modalId">
+    <h1 class="text-center">New Entry</h1>
+    <div class="h-1 bg-navy-blue rounded-xl my-4"></div>
+    <div class="flex justify-between mb-2">
+        <p class="mr-2">Date:</p>
+        <input type="date" class="border-navy-blue border-2 rounded-md" [(ngModel)]="newEntry_date" />
+    </div> 
+    <div class="flex">
+        <p class="mr-2">Habit:</p>
+        <select [(ngModel)]="newEntry_selectedHabit" (change)="selected()" class="border-navy-blue border-2 rounded-md grow">
+            <option *ngFor="let habit of allHabits" [ngValue]="habit">{{habit.name}}</option>
+        </select>
+    </div>
+
+    <div class="flex justify-between mt-8">
+        <button (click)="modalService.close();" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:font-bold  hover:text-navy-blue rounded border p-4 border-navy-blue text-navy-blue text-sm">
+            Close
+        </button>
+        <button (click)="submitNewEntry(); modalService.close();" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-navy-blue transition duration-150 ease-in-out hover:bg-navy-blue lg:font-bold rounded text-white border border-navy-blue text-sm p-4 disabled:bg-opacity-70">
+            Submit
+        </button>
+    </div>
+</jw-modal>
