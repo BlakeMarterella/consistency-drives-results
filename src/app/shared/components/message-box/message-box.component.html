@@ -1,0 +1,12 @@
+<div class="mt-6 mb-6">
+    <div [class]="severityDetails[severity].box_styling + ' px-4 py-3 rounded relative'" role="alert">
+        <strong class="font-bold">
+            <!-- <fa-icon [icon]="severityDetails[severity].icon" class="text-inherit"></fa-icon> -->
+            {{ severityDetails[severity].emoji }}
+        </strong>
+        <span class="block sm:inline">
+            {{ severity | titlecase }}: 
+            <ng-content></ng-content>
+        </span>
+    </div>
+</div>

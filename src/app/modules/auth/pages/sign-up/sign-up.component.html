@@ -42,12 +42,9 @@
         </div>
     </form>
 
-    <div *ngIf="errorMessage !== ''" class="mt-6 mb-6">
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-            <strong class="font-bold">Error! </strong>
-            <span class="block sm:inline">{{ errorMessage }}</span>
-        </div>
-    </div>
+    <shared-message-box severity="error" *ngIf="errorMessage !== ''">
+        {{ errorMessage }}
+    </shared-message-box>
 
     <div class="flex justify-between items-center mt-4">
         <button [routerLink]="['/', 'auth', 'sign-in']"

@@ -20,11 +20,15 @@
                       <div *ngIf="dates[date].isNewMonth" class="row-span-full text-center font-bold">
                            {{ dates[date].monthName }}
                       </div>
-                      <div class="w-4 h-4 cursor-pointer border-2 border-black"
+                      <!-- [START] Square -->
+                      <div 
+                           class="w-4 h-4 cursor-pointer border-2 border-black"
                            [ngClass]="dates[date].habit ? dates[date].habit.color : 'bg-gray-200'"
                            [style.background-color]="dates[date].habits ? dates[date].habits[0].color : 'bg-gray-200'"
                            [attr.title]="dates[date].habits ? dates[date].habits[0].name + ' on ' + date : 'No activity on ' + date">
                       </div>
+                      <!-- [END] Square -->
+                      
                  </ng-container>
             </div>
        </div>

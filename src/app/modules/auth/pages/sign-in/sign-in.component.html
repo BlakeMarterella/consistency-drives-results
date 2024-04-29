@@ -30,12 +30,10 @@
         </div>
     </form>
 
-    <div *ngIf="errorMessage !== ''" class="mt-6 mb-6">
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-            <strong class="font-bold">🚨 </strong>
-            <span class="block sm:inline">{{ errorMessage }}</span>
-        </div>
-    </div>
+    <shared-message-box severity="error" *ngIf="errorMessage !== ''">
+        {{ errorMessage }}
+    </shared-message-box>
+
     
     <div class="flex justify-between items-center mt-4">
         <button [routerLink]="['/', 'auth', 'register']" class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-blue bg-transparent transition duration-150 ease-in-out hover:border-navy-blue hover:bg-secondary-accent-blue lg:text-xl lg:font-bold  hover:text-navy-blue rounded border border-navy-blue text-navy-blue px-4 sm:px-10 py-2 sm:py-4 text-sm">

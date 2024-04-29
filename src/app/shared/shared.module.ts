@@ -6,11 +6,13 @@ import { LoadingIconComponent } from './components/loading-icon/loading-icon.com
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalService } from './services/modal.service';
+import { MessageBoxComponent } from './components/message-box/message-box.component';
 
 @NgModule({
   declarations: [
     LoadingIconComponent,
-    ModalComponent
+    ModalComponent,
+    MessageBoxComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { ModalService } from './services/modal.service';
     FontAwesomeModule,
     CommonModule,
     LoadingIconComponent,
-    ModalComponent
+    ModalComponent,
+    MessageBoxComponent
   ],
   providers: [
     AuthService,
