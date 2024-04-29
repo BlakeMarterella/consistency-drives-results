@@ -6,15 +6,26 @@
     </div>
   </div> -->
 
-<div class="grid grid-flow-col grid-rows-7 gap-1 bg-gray-100 w-fit">
-     <ng-container *ngFor="let date of getDates(); let i = index">
-          <div *ngIf="dates[date].isNewMonth" class="row-span-full text-center font-bold">
-               {{ dates[date].monthName }}
-          </div>
-          <div class="w-4 h-4 cursor-pointer border-2 border-black"
-               [ngClass]="dates[date].habit ? dates[date].habit.color : 'bg-gray-200'"
-               [style.background-color]="dates[date].habits ? dates[date].habits[0].color : 'bg-gray-200'"
-               [attr.title]="dates[date].habit ? dates[date].habit.name + ' on ' + date : 'No activity on ' + date">
-          </div>
-     </ng-container>
-</div>
+  <div class="border-2 border-navy-blue rounded-md p-2 bg-accent-blue">
+       <div class="mb-2">
+            <div *ngFor="let habit of getHabits()" class="flex justify-center items-center">
+                 <div class="h-5 w-5 mr-2" [style.background-color]="habit.color"></div>
+                 <div class="legend-name">{{ habit.name }}</div>
+            </div>
+       </div>
+       
+       <div class="border-2 border-navy-blue p-4 rounded-md flex justify-center items-center">
+            <div class="grid grid-flow-col grid-rows-7 gap-1 w-fit">
+                 <ng-container *ngFor="let date of getDates(); let i = index">
+                      <div *ngIf="dates[date].isNewMonth" class="row-span-full text-center font-bold">
+                           {{ dates[date].monthName }}
+                      </div>
+                      <div class="w-4 h-4 cursor-pointer border-2 border-black"
+                           [ngClass]="dates[date].habit ? dates[date].habit.color : 'bg-gray-200'"
+                           [style.background-color]="dates[date].habits ? dates[date].habits[0].color : 'bg-gray-200'"
+                           [attr.title]="dates[date].habits ? dates[date].habits[0].name + ' on ' + date : 'No activity on ' + date">
+                      </div>
+                 </ng-container>
+            </div>
+       </div>
+  </div>

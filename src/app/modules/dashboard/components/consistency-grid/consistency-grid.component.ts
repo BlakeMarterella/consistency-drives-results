@@ -29,4 +29,8 @@ export class ConsistencyGridComponent {
   public getDates(): string[] {
     return Object.keys(this.dates).sort(); // Ensure the dates are sorted
   }
+
+  public getHabits(): Habit[] {
+    return Object.values(this.habits);
+  }
 }
