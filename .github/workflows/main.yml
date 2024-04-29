@@ -33,7 +33,7 @@ jobs:
           cache-dependency-path: ./package-lock.json
         # Install node dependencies
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
         # Build angular app with dev configuration
       - name: Build dev app
