@@ -113,9 +113,40 @@ export class DatabaseService {
    * Delete a habit for the current user
    *
    * @param habitId string The id of the habit to delete
+   * @returns Promise<boolean> true if successful, false if not
    */
-  deleteHabit(habitId: string) {
-    return this.habitRef.doc(habitId).delete();
+  deleteHabit(habitId: string): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.habitRef
+        .doc(habitId)
+        .delete()
+        .then(() => {
+          resolve(true);
+        })
+        .catch((error) => {
+          reject(getFirebaseErrorMessage(error.code));
+        });
+    });
+  }
+
+  /**
+   * Update a habit for the current user
+   * 
+   * @param habit 
+   * @returns true if successful, false if not
+   */
+  updateHabit(habit: Habit): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.habitRef
+        .doc(habit.id)
+        .update(habit)
+        .then(() => {
+          resolve(true);
+        })
+        .catch((error) => {
+          reject(getFirebaseErrorMessage(error.code));
+        });
+    });
   }
 
   /**

@@ -13,6 +13,7 @@ import { HabitsComponent } from './pages/habits/habits.component';
 import { EntriesComponent } from './pages/entries/entries.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { HabitInfoCardsComponent } from './components/habit-info-cards/habit-info-cards.component';
 
 
 
@@ -27,7 +28,8 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     HabitsComponent,
     EntriesComponent,
     ProfileComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    HabitInfoCardsComponent
   ],
   imports: [
     DashboardRoutingModule,

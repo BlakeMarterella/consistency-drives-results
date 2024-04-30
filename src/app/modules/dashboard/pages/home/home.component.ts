@@ -4,7 +4,7 @@ import { DatabaseService } from '../../services/database.service';
 import { FB_HABIT } from '@data/firebase.schema';
 
 @Component({
-  selector: 'app-home',
+  selector: 'database-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
