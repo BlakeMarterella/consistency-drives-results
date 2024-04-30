@@ -9,6 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { NewHabitPopupComponent } from './popups/new-habit-popup/new-habit-popup.component';
 import { NewEntryPopupComponent } from './popups/new-entry-popup/new-entry-popup.component';
+import { HabitsComponent } from './pages/habits/habits.component';
+import { EntriesComponent } from './pages/entries/entries.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 
 
@@ -19,7 +23,11 @@ import { NewEntryPopupComponent } from './popups/new-entry-popup/new-entry-popup
     SidebarItemComponent,
     ConsistencyGridComponent,
     NewHabitPopupComponent,
-    NewEntryPopupComponent
+    NewEntryPopupComponent,
+    HabitsComponent,
+    EntriesComponent,
+    ProfileComponent,
+    PageHeaderComponent
   ],
   imports: [
     DashboardRoutingModule,

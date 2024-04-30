@@ -23,8 +23,8 @@
         </div>
         <ul class="space-y-2 text-sm">
             <li>
-                <a [routerLink]="['/', 'dashboard']"
-                    class="flex items-center space-x-3 text-navy-blue p-2 rounded-md font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline">
+                <a [routerLink]="['/', 'dashboard']" routerLinkActive="selected-sidebar-item" routerLinkActiveOptions="{exact: true}"
+                class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 hover:text-navy-blue focus:shadow-outline duration-200">
                     <span>
                         <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a [routerLink]="['/', 'dashboard', 'entries']" routerLinkActive="selected-sidebar-item"
                     class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 hover:text-navy-blue focus:shadow-outline duration-200">
                     <span>
                         <!-- <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a [routerLink]="['/', 'dashboard', 'habits']" routerLinkActive="selected-sidebar-item"
                     class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 hover:text-navy-blue focus:shadow-outline duration-200">
                     <span>
                         <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,7 +59,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a [routerLink]="['/', 'dashboard', 'profile']" routerLinkActive="selected-sidebar-item"
                     class="flex items-center space-x-3 text-white p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 hover:text-navy-blue focus:shadow-outline duration-200">
                     <span>
                         <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
