@@ -13,6 +13,24 @@ module.exports = {
     },
     extend: {
       colors: {
+        'brand-darkest-blue': {
+          DEFAULT: '#02070C'
+        },
+        'brand-dark-blue:': {
+          DEFAULT: '#194779',
+        },
+        'brand-med-blue': {
+          DEFAULT: '#0D3143',
+        },
+        'brand-light-blue': {
+           DEFAULT: '#3DA5D9',
+        },
+        'brand-white': {
+          DEFAULT: '#EFEFEF'
+        },
+        'brand-light-grey': {
+          DEFAULT: '#C0BFBD'
+        },
         'black': {
           DEFAULT: "#04080F"
         },

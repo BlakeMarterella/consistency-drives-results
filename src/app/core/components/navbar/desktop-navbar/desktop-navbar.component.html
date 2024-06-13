@@ -1,0 +1,46 @@
+<nav id="navbar" class="sticky top-0 bg-transparent z-[100] duration-300 transform py-4 px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-40 shadow-xl">
+
+    <div class="flex items-center justify-center align-middle text-center font-medium text-lg"
+        id="main_menu">
+
+        <!-- [START] Left Section -->
+        <img src="../../../assets/images/docsnap-full-logo-trademark.svg" class="w-44 h-auto hover:cursor-pointer"
+            alt="Docsnap Logo" [routerLink]="['/']" />
+        <!-- [END] Left Section -->
+
+        <!-- [START] Middle Section -->
+        <div class="flex-grow">
+            <div class="flex items-center justify-end">
+                <ul class="flex flex-wrap p-1 md:p-2  sm:rounded-full" id="centered-elements">
+                    <li class="relative mx-1 px-1 py-2 group rounded-full mb-1 md:mb-0"
+                        *ngFor="let item of navbarItems">
+                        <a class="whitespace-no-wrap" [routerLink]='item.path'>
+                            <span class="text-lg hover:cursor-pointer" routerLinkActive="active-link"
+                                [routerLinkActiveOptions]="{ exact: true }">
+                                {{item.title}}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- [END] Middle Section -->
+
+        <!-- [START] Right Section -->
+        <!-- <a class="whitespace-no-wrap pr-4" [routerLink]="['/', 'auth', 'login']" id="right-elements">
+            <div class="flex justify-center items-center animate-fade animate-delay-0 animate-once">
+                <span class="text-lg hover:cursor-pointer" routerLinkActive="active-link"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    Login
+                </span>
+            </div>
+        </a>
+
+        <div [routerLink]="signupPath" id="box"
+            class="cursor-pointer inline-block px-4 py-2 leading-none border rounded hover:border-transparent hover:text-black transition animate-fade animate-delay-0 animate-once">
+            <span>Get Started</span>
+        </div> -->
+        <!-- [END] Right Section -->
+
+    </div>
+</nav>

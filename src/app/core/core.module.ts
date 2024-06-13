@@ -24,13 +24,16 @@ import {
 import { AuthLayoutComponent, HomeLayoutComponent } from "./layouts";
 
 // Components
-import { HomeNavbarComponent, PageNotFoundComponent } from './components';
+import { PageNotFoundComponent, FooterComponent, NavbarControllerComponent, MobileNavbarComponent, DesktopNavbarComponent } from './components';
 
 @NgModule({
   declarations: [
     AuthLayoutComponent,
     HomeLayoutComponent,
-    HomeNavbarComponent,
+    FooterComponent,
+    NavbarControllerComponent,
+    MobileNavbarComponent,
+    DesktopNavbarComponent,
     PageNotFoundComponent,
   ],
   imports: [
@@ -46,7 +49,6 @@ import { HomeNavbarComponent, PageNotFoundComponent } from './components';
   ],
   exports: [
     AngularFireAnalyticsModule,
-    HomeNavbarComponent,
     HomeLayoutComponent,
     AuthLayoutComponent
   ],

@@ -1,0 +1,72 @@
+<nav class="fixed top-0 left-0 right-0 z-[1000] duration-300 w-screen transform bg-primary-bg shadow-xl">
+    <!-- [START] Navbar -->
+    <div class="flex justify-between items-center max-w-6xl mx-auto px-4 py-3">
+        <div class="flex-grow">
+            <img src="../../../../assets/images/docsnap-full-logo-trademark.svg" class="h-10" [routerLink]="''"
+                (click)="toggleMenu()" alt="Docsnap Logo" />
+        </div>
+
+        <div class="flex items-center">
+            <!-- [START] Menu Icon -->
+            <button #menuIcon id="menu-icon" (click)="this.toggleMenu()" class="menu"
+                [attr.aria-label]="this.showMenu ? 'Close menu' : 'Open menu'">
+                <svg class="fill-docsnap-blue w-10 h-10" viewBox="0 0 100 100">
+                    <path class="line line1"
+                        d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                    <path class="line line2" d="M 20,50 H 80" />
+                    <path class="line line3"
+                        d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                </svg>
+            </button>
+            <!-- [END] Menu Icon -->
+        </div>
+    </div>
+    <!-- [END] Navbar -->
+
+    <!-- [START] Dropdown Menu -->
+    <div [ngClass]="{'slide-up': !showMenu, 'slide-down': showMenu}"
+        class="transition-all duration-300 bg-primary-bg mobile-navbar">
+        <div *ngIf="showMenuItems" class="pb-3">
+            <div class="text-docsnap-blue text-left">
+                <!-- [START] Navbar Items -->
+                <a class="flex py-4 px-6" *ngFor="let item of navbarItems" [routerLink]="item.path"
+                    (click)="toggleMenu()" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+                    <span class="flex-grow text-xl font-semibold">
+                        {{item.title}}
+                    </span>
+                    <svg class="w-6 h-6 fill-docsnap-blue" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185.343 185.343" xml:space="preserve"
+                        fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M51.707,185.343c-2.741,0-5.493-1.044-7.593-3.149c-4.194-4.194-4.194-10.981,0-15.175 l74.352-74.347L44.114,18.32c-4.194-4.194-4.194-10.987,0-15.175c4.194-4.194,10.987-4.194,15.18,0l81.934,81.934 c4.194,4.194,4.194,10.987,0,15.175l-81.934,81.939C57.201,184.293,54.454,185.343,51.707,185.343z">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <!-- [END] Navbar Items -->
+
+                <!-- [START] Bottom Action Buttons -->
+                <!-- <div class="flex justify-center items-center text-center py-4 px-6 gap-4 text-docsnap-blue">
+                    <div [routerLink]="['/', 'auth', 'login']"
+                        class="w-full cursor-pointer inline-block px-4 py-2 leading-none border border-docsnap-blue rounded">
+                        <span class="text-xl">Login</span>
+                    </div>
+
+                    <div [routerLink]="signupPath"
+                        class="w-full cursor-pointer inline-block px-4 py-2 leading-none border border-docsnap-blue bg-docsnap-blue text-white rounded">
+                        <span class="text-xl">Get Started</span>
+                    </div>
+                </div> -->
+                <!-- [END] Bottom Action Buttons -->
+            </div>
+        </div>
+    </div>
+    <!-- [END] Dropdown Menu -->
+</nav>
